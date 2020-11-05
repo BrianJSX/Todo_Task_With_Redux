@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import TaskForm from './components/TaskForm';
+import TaskList from './components/TaskList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {}
+  }
+
+  render() {
+    let {isDisplayForm} = this.props;
+    let element = isDisplayForm == true ? <TaskForm></TaskForm> :  '';
+
+    return (
+      <div className="container">
+        <div className="row p-5">
+            <h1 className="mx-auto">
+                Quản lý công việc
+            </h1>
+        </div>
+        <div className="row">
+            {element}
+            <TaskList></TaskList>
+        </div>
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isDisplayForm : state.isDisplayForm
+  }
+}
+
+export default connect(mapStateToProps)(App)
