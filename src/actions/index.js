@@ -15,6 +15,21 @@ export const addTask = (tasks) => {
     }
 }
 
+//destroy form 
+export const destroyTask = (data) => {
+    return {
+        type: type.DESTROY_FORM,
+        data
+    }
+}
+//destroy form 
+export const updateTask = (data) => {
+    return {
+        type: type.UPDATE_TASK,
+        data
+    }
+}
+
 //open form 
 export const openForm = () => {
     return {

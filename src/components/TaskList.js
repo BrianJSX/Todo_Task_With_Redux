@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import TaskForm from './TaskForm';
 import TaskItem from './TaskItem';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
 
 export class TaskList extends Component {
-
+    constructor(props) {
+        super(props);
+    }
     onOpenForm = () => {
         this.props.openForm();
     };
@@ -17,7 +18,7 @@ export class TaskList extends Component {
         });
         
         return (
-            <div className={isDisplayForm == true ? 'col-md-8 ml-4' : 'col-md-12 ml-4'}>
+            <div className={isDisplayForm === true ? 'col-md-8 ml-4' : 'col-md-12 ml-4'}>
                 <div className="row" style={{border: '1px solid gray', borderRadius: '10px'}}>
                     <div className="col-md-12 p-3">
                         <button onClick={this.onOpenForm} type="button" className="btn btn-outline-primary">Thêm công việc</button>

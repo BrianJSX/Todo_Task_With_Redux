@@ -57,8 +57,8 @@ export class TaskForm extends Component {
                             id=""
                             onChange={this.onChange}
                             >
-                                <option value={true}>Đã làm</option>
                                 <option value={false}>Chưa làm</option>
+                                <option value={true}>Đã làm</option>
                             </select>
                             </div>
                         </div>

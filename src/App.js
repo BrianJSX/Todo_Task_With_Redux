@@ -11,7 +11,7 @@ export class App extends Component {
 
   render() {
     let {isDisplayForm} = this.props;
-    let element = isDisplayForm == true ? <TaskForm></TaskForm> :  '';
+    let element = isDisplayForm === true ? <TaskForm></TaskForm> :  '';
 
     return (
       <div className="container">

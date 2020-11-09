@@ -4,7 +4,7 @@ import isDisplayForm from './isDisplayForm';
 
 const myReducer = combineReducers({
     tasks,
-    isDisplayForm
+    isDisplayForm,
 });
 
 export default myReducer
