@@ -19,8 +19,8 @@ export class TaskItem extends Component {
                 <th scope="row">{this.props.index +  1}</th>
                 <td>{data.name}</td>
                 <td>
-                   <span onClick={this.onUpdateTask} className={data.status == "true" ? "badge badge-success"  : "badge badge-danger" }>
-                       {data.status ==  "true" ? "Đã làm" : "Chưa làm"}
+                   <span onClick={this.onUpdateTask} className={data.status != false ? "badge badge-success"  : "badge badge-danger" }>
+                       {data.status !=  false ? "Đã làm" : "Chưa làm" }
                    </span>
                 </td>
                 <td>
@@ -34,7 +34,7 @@ export class TaskItem extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        tasks: state.tasks
+
     }
 }
 
